@@ -17,15 +17,15 @@ class UrlSignerTest(unittest.TestCase):
         self.url_signer = UrlSigner(self.secret_key)
     
     @data (
-            # web domain doesn't match signaturee
+            # test domain
             ("https://www.reddit.com?signature=7c72fbc912121a00ce8a684e6941cc81", True),
             ("https://www.facebook.com?signature=7c72fbc912121a00ce8a684e6941cc81", False),
             
-            #  sub reddit doesn't match signature
+            #  sub reddit
             ("https://www.reddit.com/r/foo?signature=d85968ba815755dfd91b0594255ec6b2", True),
             ("https://www.reddit.com/r/notfoo?signature=d85968ba815755dfd91b0594255ec6b2", False),
             
-            # query string doesn't match signature
+            # query string
             ("https://reddit.com?greetings=hello&signature=6a017725e5d5d97c5435cc20bade1c64", True),
             ("https://reddit.com?greetings=goodby&signature=6a017725e5d5d97c5435cc20bade1c64",False),
             

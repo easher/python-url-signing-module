@@ -4,3 +4,4 @@ bin/
 src/__pycache__/
 .Python
 pip-selfcheck.json
+src/.UrlSigner.py.*
